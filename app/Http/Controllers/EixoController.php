@@ -10,9 +10,9 @@ class EixoController extends Controller
     
     public function index()
     {
-        $dados = Eixo::all();
 
-        return view('eixos.index', compact('dados'));
+        $data = Eixo::orderBy('nome')->get();
+        return view('eixos.index', compact(['data']));
     }
 
     

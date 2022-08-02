@@ -1,43 +1,27 @@
 <?php
-
 namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class DataListEixo extends Component
+class dataListEixo extends Component
 {
-
-    public $title;
-    public $crud;
+    /**
+     * Create a new component instance.
+     *
+     * @return void
+     */
     public $header;
-    public $fields;
     public $data;
     public $hide;
-    public $info;
-    public $remove;
 
-    public function __construct(
-        $title,
-        $crud,
-        $header,
-        $fields,
-        $data,
-        $hide,
-        $info,
-        $remove
-    ) {
-        $this->title = $title;
-        $this->crud = $crud;
+    public function __construct( $header, $data, $hide) {
         $this->header = $header;
-        $this->fields = $fields;
-        $this->data = $data;
-        $this->hide = $hide;
-        $this->info = (array) $info;
-        $this->remove = $remove;
+        $this->data = $data;    
+        $this->hide = $hide;   
     }
 
-    public function render()
-    {
+    public function render() {
+
         return view('components.dataListEixo');
     }
 }
